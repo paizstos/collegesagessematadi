@@ -343,5 +343,5 @@ https.createServer({
     key: fs.readFileSync('static/key/key.pem'),
     cert: fs.readFileSync('static/key/cert.pem'),
     passphrase: 'ingi'
-  }, app).listen(8080);
+  }, app).listen(process.env.PORT);
 console.log('Go to https://localhost:8080');
