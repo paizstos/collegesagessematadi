@@ -339,9 +339,12 @@ app.post('/delete/:index', async (req, res) => {
 
 
 //create the server
+
+const PORT = process.env.PORT || 8081
+
 https.createServer({
     key: fs.readFileSync('static/key/key.pem'),
     cert: fs.readFileSync('static/key/cert.pem'),
     passphrase: 'ingi'
-  }, app).listen(process.env.PORT);
-console.log('Go to https://localhost:8080');
+  }, app).listen(PORT);
+console.log('Go to https://localhost:8081');
