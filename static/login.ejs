@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <%- include('partials/head.ejs'); %>
+    </head>
+    
+    
+    <body>
+        <header>
+            <%- include('partials/header.ejs', {login: logine, date: year}) ; %>
+        </header>
+<h1 style="text-align:left;">Se connecter ou s'inscrire</h1>
+</br> </br>
+
+        <h3>Se Connecter</h3>
+        
+   
+            <form action="connect" method="post">
+                Username:<br>
+                <input type="text" name="username" placeholder="Christos1101" required ><br>
+                password:<br>
+                <input type="password" name="password" required >
+                <br><br>
+                <button type="submit">Se connecter</button>
+            </form>
+
+        </br></br>
+
+            <h3>S'enregistrer</h3>
+            <form action="newUser" method="post">
+                Username:<br>
+                <input type="text" name="username" placeholder="Christos1101" required ><br>
+                Email:<br>
+                <input type="email" name="email" placeholder="Ex : christos1101@uclouvain.be" required ><br>
+                password:<br>
+                <input type="password" name="password" required>
+                <br><br>
+                <button type="submit">S'enregistrer</button>
+            </form>
+        </td>
+    </tr>
+
+</table>
+
+
+</body>
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <%- include('partials/head.ejs'); %>
+    </head>
+    
+    <body>
+        <header>
+            <%- include('partials/header.ejs', {login: logine, date: year}); %>
+        </header>
+        
+        <main>
+            
+            <table class="table"  width="100%"> 
+                <caption class = "captionglobal"><h3>Liste des élèves</h3></caption>
+                <tr>
+                    <th>Nom</th>
+                    <th>Prenom</th>
+                    <th>Classe</th>
+                    <th>Age</th>
+                    <th>Solde P1</th>
+                    <th>Solde P2</th>
+                    <th>Solde P3</th>
+                    <th>Modifier</th>
+
+                </tr>
+                <tr>
+                    <td>Ambongo</td>   
+                    <td>Fridolin</td>  
+                    <td>P1A</td>
+                    <td>64 </td>
+                    <td class="solde1">120</td>
+                    <td class="solde2">120</td>
+                    <td class="solde3">120</td>
+                   
+                </tr>
+                <% for (let i = 0; i < tevents.length; i++) { %>
+                    <tr>
+                        <td><%= tevents[i] %></td>
+                        <td><%= tevents2[i] %></td>
+                        <td><%= devents[i] %></td>
+                        <td><%= levents[i] %></td>
+                        <td class="solde1"><%= daevents1[i] %></td>
+                        <td class="solde2"><%= daevents2[i] %></td>
+                        <td class="solde3"><%= daevents3[i] %></td>
+                        <td>
+                            <form action="/edit/<%= i %>" method="get">
+                                <button type="submit" onclick="return confirm('Vous devez avoir les droits requis pour effectuer cette action !')">Modifier</button>
+                            </form>
+                        </td>
+                    </tr>
+                <% } %>
+                
+            </table>
+            
+        </main>
+
+        <!-- Script to handle coloring of solde cells -->
+        <script>
+            document.addEventListener("DOMContentLoaded", function() {
+              let solde1Cells = document.querySelectorAll('.solde1');
+              let solde2Cells = document.querySelectorAll('.solde2');
+              let solde3Cells = document.querySelectorAll('.solde3');
+          
+              solde1Cells.forEach(cell => {
+                if (parseFloat(cell.innerText) > 0) {
+                  cell.classList.add('positive');
+                } else if (parseFloat(cell.innerText) === 0) {
+                  cell.classList.add('zero');
+                }
+              });
+          
+              solde2Cells.forEach(cell => {
+                if (parseFloat(cell.innerText) > 0) {
+                  cell.classList.add('positive');
+                } else if (parseFloat(cell.innerText) === 0) {
+                  cell.classList.add('zero');
+                }
+              });
+          
+              solde3Cells.forEach(cell => {
+                if (parseFloat(cell.innerText) > 0) {
+                  cell.classList.add('positive');
+                } else if (parseFloat(cell.innerText) === 0) {
+                  cell.classList.add('zero');
+                }
+              });
+            });
+          </script>
+          <!-- End of Script to handle coloring of solde cells -->
+          
+    </body>
+</html>

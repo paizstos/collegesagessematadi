@@ -1,0 +1,15 @@
+<nav class="menu">
+    <ul>
+        <li><img src="logo.png" class="responsive-logo">></li>
+        <li><a class="nav_link" href="/">HOME</a></li>
+        <li><a class="nav_link" href="/">College de la Sagesse</a></li>
+        <li class="nav_search"> <form action="/search" method="get"><input type="text" placeholder="Rechercher" name="query">
+        <button type="submit">Recherche</button></form></li>
+        <li><a class="nav_link" href="/login"><%= login %></a></li>
+    </ul>
+</nav>
+
+<nav>
+    <a class="navBar_link" href="/addEleve">Ajouter un élève</a>
+    <p class="navBar_date"> Date actuelle: <%= date %> </p>
+</nav>
